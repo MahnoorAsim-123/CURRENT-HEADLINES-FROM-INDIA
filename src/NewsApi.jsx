@@ -5,27 +5,33 @@ import { Card } from './Card';
 import { Header } from './Header';
 import NotFound from './NotFound';
 import ApiExpired from './ApiExpired';
+import Loader from "./Loader";
 
 const NewsApi = () => {
     const [apiData, setApiData] = useState([]);
     const [city, setCity] = useState("");
     const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const fetchData = async (e) => {
         e.preventDefault();
+        setLoading(true);
         if (city === "") {
             alert("Please enter your city");
+            setLoading(false);
         } else {
             await axios.get(`https://newsapi.org/v2/top-headlines?country=in&apiKey=4981042d272e49e89035f20e82f017b5&q=${city}`)
                 .then((response) => {
                     console.log(response.data.articles);
                     setApiData(response.data.articles);
                     setCity("");
+                    setLoading(false);
                 })
                 .catch((err) => {
                     console.log(err, "err");
                     setError(true);
                     setCity("");
+                    setLoading(false);
                 })
         }
     }
@@ -52,7 +58,9 @@ const NewsApi = () => {
                         onChange={(event) => setCity(event.target.value)}
                     />
                 </div>
-                <button className="btn btn-primary mb-2 searchBtn">SEARCH</button>
+                {
+                    loading ? <Loader /> : <button className="btn btn-primary mb-2 searchBtn">SEARCH</button>
+                }
             </form>
 
 
