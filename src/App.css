@@ -1,0 +1,129 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #1C1C1E;
+}
+.header{
+  width: 100%;
+  background-color: #f50000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  /* border-bottom: 5px solid #fdff00; */
+}
+.logo img{
+  width: 60px;
+  margin: 2px 20px;
+  /* border: 1px solid black; */
+}
+.navLinks{
+  margin-top: 10px;
+  /* border: 1px solid black; */
+
+}
+.navLinks > ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* border: 1px solid rgb(155, 155, 155); */
+
+}
+.navLinks > ul > li{
+  list-style: none;
+  margin-left: 20px;
+  /* border: 1px solid rgb(9, 117, 90); */
+  color: #ffffff;
+  font-size: 17px;
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+.container{
+  /* border: 1px solid red; */
+  text-align: center;
+  color: #fff;
+  /* text-shadow: 5px 5px 7px lightgrey; */
+}
+.container h1{
+  font-size: 40px;
+}
+form{
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form .searchBtn:hover{
+  background: none !important;
+  border: 1px solid #0073cf;
+  font-weight: bold;
+}
+.errorMsg{
+  /* border: 1px solid black; */
+  color: lightgray;
+  font-weight: bold;
+  text-align: center;
+  font-size: 38px;
+  margin-top: 20px;
+}
+.card{
+  box-shadow: 5px 7px 45px -3px rgba(255, 255, 255, 0.6) !important;
+  color: #1C1C1E;
+}
+.notresultfound{
+  margin-top: 70px;
+  text-align: center;
+  /* border: 1px solid wheat; */
+}
+.notresultfound img{
+  width: 250px;
+  /* border: 1px solid wheat; */
+}
+.info{
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+}
+.info p{
+  width: 40%;
+  margin: 20px auto;
+  font-size: 14px;
+}
+/* Animations */
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes fadeInUp {
+  0% {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  }
+  100% {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+  }
+  }
+  @keyframes fadeInUp {
+  0% {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  }
+  100% {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+  }
+  }
